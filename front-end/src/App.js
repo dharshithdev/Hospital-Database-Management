@@ -28,10 +28,12 @@ function App() {
           </button>
         </div>
         <Routes>
-          <Route path='/Patient' element={<Patient />}></Route>
+          <Route path="/" element={<h2>Welcome to the Hospital Management System</h2>} />
+          <Route path="/patient" element={<Patient />}></Route>
           <Route path='/Doctor' element={<Doctors />}></Route>
           <Route path='/Admins' element={<Admin />}></Route>
           <Route path='/Staffs' element={<Staffs />}></Route>
+          <Route path="*" element={<h2>404: Page Not Found</h2>} />
         </Routes>
       </div>
     </Router>

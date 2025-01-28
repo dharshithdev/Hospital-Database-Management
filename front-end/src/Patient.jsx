@@ -7,17 +7,17 @@ function Patient() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3000/patients')
+            .get('http://localhost:5000/patient')
             .then((response) => setPatients(response.data))
             .catch((error) => console.log(error));
     }, []);
 
     const addPatient = () => {
         axios
-            .post('http://localhost:3000/patients', newPatient)
+            .post('http://localhost:5000/patient', newPatient)
             .then(() => {
                 setNewPatient({name:'', age:'', gender:'', cause:'', status:''});
-                return axios.get('http://localhost:3000/patients');
+                return axios.get('http://localhost:5000/patient');
             })
             .then((response) => setPatients(response.data))
             .catch((error) => console.log(error));
